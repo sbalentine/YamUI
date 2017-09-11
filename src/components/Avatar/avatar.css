@@ -24,11 +24,6 @@
   height: 24px;
   width: 24px;
 }
-.y-avatar__size-xSmall > .ms-Persona {
-  /* Fabric Persona adds extra height here. This should be unnecessary
-     if we can extract a Fabric Avatar component out of Persona. */
-  height: 24px;
-}
 
 .y-avatar--badge {
   position: absolute;
@@ -44,13 +39,4 @@
 .y-avatar__size-xSmall--badge {
   height: 16px;
   width: 16px;
-}
-
-/* Fabric CSS overrides */
- .y-avatar > .ms-Persona {
-   margin: 0;
- }
-.y-avatar__borderType-soft .ms-Persona-imageArea,
-.y-avatar__borderType-soft .ms-Image {
-  border-radius: 2px;
 }

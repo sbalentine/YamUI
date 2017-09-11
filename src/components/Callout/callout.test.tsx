@@ -2,13 +2,13 @@
 import * as React from 'react';
 import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
 import { Key } from '../../util/enums/key';
-import { Callout as FabricCallout } from 'office-ui-fabric-react/lib/Callout';
-import { Callout, CalloutProps, CalloutState, DirectionalHint, TriggerType } from './index';
+import { Callout, CalloutProps, CalloutState, TriggerType } from './index';
 import ScreenreaderText from '../ScreenreaderText';
 
 describe('<Callout />', () => {
   jest.useFakeTimers();
 
+  const calloutSelecter = '.y-callout--body';
   let component: ShallowWrapper<CalloutProps, {}>;
   let fullComponent: ReactWrapper<CalloutProps, {}>;
 
@@ -30,9 +30,6 @@ describe('<Callout />', () => {
         expect(component.hasClass('y-callout')).toBe(true);
       });
 
-      it('does not show the callout', () => {
-        expect(component.find(FabricCallout).length).toBe(0);
-      });
 
       it('matches its snapshot', () => {
         expect(component).toMatchSnapshot();
@@ -177,7 +174,7 @@ describe('<Callout />', () => {
 
       it('the Callout closes after a delay', () => {
         jest.runTimersToTime(500);
-        expect(component.find(FabricCallout).length).toBe(0);
+        expect(component.find(calloutSelecter).length).toBe(0);
       });
 
       describe('mousing back in', () => {
@@ -188,7 +185,7 @@ describe('<Callout />', () => {
 
         it('prevents the callout from closing', () => {
           jest.runTimersToTime(500);
-          expect(component.find(FabricCallout).length).toBe(1);
+          expect(component.find(calloutSelecter).length).toBe(1);
         });
 
         describe('and mousing back out', () => {
@@ -198,7 +195,7 @@ describe('<Callout />', () => {
 
           it('allows the Callout to close', () => {
             jest.runTimersToTime(500);
-            expect(component.find(FabricCallout).length).toBe(0);
+            expect(component.find(calloutSelecter).length).toBe(0);
           });
         });
       });
@@ -217,7 +214,7 @@ describe('<Callout />', () => {
 
         it('prevents the callout from closing', () => {
           jest.runTimersToTime(500);
-          expect(component.find(FabricCallout).length).toBe(1);
+          expect(component.find(calloutSelecter).length).toBe(1);
         });
 
         describe('and mousing back out', () => {
@@ -227,7 +224,7 @@ describe('<Callout />', () => {
 
           it('allows the Callout to close', () => {
             jest.runTimersToTime(500);
-            expect(component.find(FabricCallout).length).toBe(0);
+            expect(component.find(calloutSelecter).length).toBe(0);
           });
         });
       });
@@ -240,7 +237,7 @@ describe('<Callout />', () => {
       });
 
       it('the Callout closes immediately', () => {
-        expect(component.find(FabricCallout).length).toBe(0);
+        expect(component.find(calloutSelecter).length).toBe(0);
       });
     });
 
@@ -251,7 +248,7 @@ describe('<Callout />', () => {
       });
 
       it('the Callout remains open', () => {
-        expect(component.find(FabricCallout).length).toBe(1);
+        expect(component.find(calloutSelecter).length).toBe(1);
       });
     });
   });
@@ -267,7 +264,7 @@ describe('<Callout />', () => {
     });
 
     it('renders the Callout', () => {
-      expect(fullComponent.find(FabricCallout).length).toBe(0);
+      expect(fullComponent.find(calloutSelecter).length).toBe(0);
     });
   });
 
@@ -282,7 +279,7 @@ describe('<Callout />', () => {
     });
 
     it('renders the Callout', () => {
-      expect(fullComponent.find(FabricCallout).length).toBe(1);
+      expect(fullComponent.find(calloutSelecter).length).toBe(1);
     });
 
     describe('when a hover out triggers its close timeout', () => {

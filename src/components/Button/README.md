@@ -1,7 +1,6 @@
 # Button
 
-Allows user to take an action. Is based on Office Fabric UI's [Button](https://dev.office.com/fabric#/components/button)
-
+Allows user to take an action.
 ---
 
 ### Properties

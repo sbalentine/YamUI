@@ -52,10 +52,7 @@ Present an avatar for an admin
 
 ```
 import Avatar from 'yamui/dist/components/Avatar';
-import Image from 'yamui/dist/components/Image';
-
-const badgeImage = <Image source="badge-image.png" description="" fullWidth={true} />;
 
 <Avatar imageUrl="my-image.jpg" size={AvatarSize.XSMALL} name="Smiley Face"
-        badgeContent={badgeImage} badgeDescription="Admin" />
+        badgeSource="badge-image.png" badgeDescription="Admin" />
 ```

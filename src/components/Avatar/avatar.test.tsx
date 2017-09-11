@@ -1,7 +1,7 @@
 /*! Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. */
 import * as React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
+import Persona, { PersonaSize } from '../Persona';
 import Avatar, { AvatarProps, AvatarSize, BorderType } from './index';
 import ScreenreaderText from '../ScreenreaderText';
 import Text from '../Text';
@@ -26,7 +26,7 @@ describe('<Avatar />', () => {
     });
 
     it('defaults to medium size', () => {
-      expect(component.find(Persona).prop('size')).toEqual(PersonaSize.small);
+      expect(component.find(Persona).prop('size')).toEqual(PersonaSize.SMALL);
     });
 
     it('matches its snapshot', () => {
@@ -130,7 +130,7 @@ describe('<Avatar />', () => {
     });
 
     it('renders a Persona component with the correct size', () => {
-      expect(component.find(Persona).prop('size')).toEqual(PersonaSize.large);
+      expect(component.find(Persona).prop('size')).toEqual(PersonaSize.LARGE);
     });
 
     it('matches its snapshot', () => {

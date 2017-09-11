@@ -1,5 +1,5 @@
 # YamUI [![Travis](https://img.shields.io/travis/Microsoft/YamUI.svg)](https://travis-ci.org/Microsoft/YamUI)
-UI Component Framework for Yammer.com. This is built with React on top of [Fabric](https://dev.office.com/fabric#/components/) components. Unit tests with [Jest](https://facebook.github.io/jest/), isolated development environment + documentation with [ReactStorybook](https://github.com/storybooks/storybook), visual diff regression with [BackstopJS](https://garris.github.io/BackstopJS/). Visual diff tasks run within a [Docker](https://www.docker.com/) container to ensure consistency between local dev environments and CI.
+UI Component Framework for Yammer.com. Unit tests with [Jest](https://facebook.github.io/jest/), isolated development environment + documentation with [ReactStorybook](https://github.com/storybooks/storybook), visual diff regression with [BackstopJS](https://garris.github.io/BackstopJS/). Visual diff tasks run within a [Docker](https://www.docker.com/) container to ensure consistency between local dev environments and CI.
 
 ## Installation
 * Clone this repo
@@ -78,5 +78,3 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 ## Licenses
 
 All files on the YamUI GitHub repository are subject to the MIT license. Please read the LICENSE file at the root of the project.
-
-Note that we depend on [Fabric](https://github.com/OfficeDev/office-ui-fabric-react/tree/master/packages/office-ui-fabric-react) for fonts. Usage of the fonts and icons referenced in YamUI is subject to the terms of the [assets license agreement](https://static2.sharepointonline.com/files/fabric/assets/license.txt).

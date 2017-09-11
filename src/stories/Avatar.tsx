@@ -3,7 +3,6 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import Avatar, { AvatarSize, BorderType } from '../components/Avatar';
 import Block, { GutterSize } from '../components/Block';
-import Image from '../components/Image';
 import withReadme from 'storybook-readme/with-readme';
 const readme = require('../components/Avatar/README');
 
@@ -11,7 +10,7 @@ const readme = require('../components/Avatar/README');
 const badge = require('./assets/img/badge.png');
 const smiley = require('./assets/img/smiley.png');
 const yammerLogo = require('./assets/img/yammer-logo.png');
-const badgeContent = <Image source={badge} description="" fullWidth={true} />;
+const badgeContent = <img src="./assets/img/badge.png" alt="" />;
 
 const tableHeader = (
   <thead>
@@ -139,8 +138,7 @@ storiesOf('Avatar', module)
   .add('example colors', () => (
     <div>
       <Block bottomSpacing={GutterSize.SMALL}>
-        A background color will be automatically set when an imageUrl is not provided. Fabric handles
-        this behind the scenes for us, based on the name prop passed in.
+        A background color will be automatically set when an imageUrl is not provided.
       </Block>
       <Block bottomSpacing={GutterSize.SMALL}>
           <Avatar size={AvatarSize.MEDIUM} name="DDD DDD" initials="LG" />

@@ -2,12 +2,14 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { FixedGridRow, FixedGridColumn, GutterSize } from '../components/FixedGrid';
-import Image from '../components/Image';
 import withReadme from 'storybook-readme/with-readme';
 const readme = require('../components/FixedGrid/README');
 
 
 const yammerLogo = require('./assets/img/yammer-logo.png');
+const image = 'placeholder';
+
+//  <img src="./assets/img/yammer-logo.png" width={100} alt ="test"/>
 
 storiesOf('FixedGrid', module)
   .addDecorator(withReadme(readme))
@@ -15,7 +17,7 @@ storiesOf('FixedGrid', module)
     <div>
       <FixedGridRow>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           The left column is fixed with <strong>width: 100</strong>. Its Image has
@@ -29,7 +31,7 @@ storiesOf('FixedGrid', module)
     <div>
       <FixedGridRow>
         <FixedGridColumn fixed>
-          <Image source={yammerLogo} description="test" width={100} />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           The left column is fixed without a width, so it will shrink to fit its content. Its Image is set to
@@ -47,7 +49,7 @@ storiesOf('FixedGrid', module)
           and will grow or shrink to fill the grid's container.
         </FixedGridColumn>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
       </FixedGridRow>
     </div>
@@ -60,7 +62,7 @@ storiesOf('FixedGrid', module)
           100px wide. The left column is not set to fixed and will grow or shrink to fill the grid's container.
         </FixedGridColumn>
         <FixedGridColumn fixed>
-          <Image source={yammerLogo} description="test" width={100} />
+          {image}
         </FixedGridColumn>
       </FixedGridRow>
     </div>
@@ -69,14 +71,14 @@ storiesOf('FixedGrid', module)
     <div>
       <FixedGridRow>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This example has three columns. The left and right are both fixed, while the center column
           will grow or shrink to fit the grid's container.
         </FixedGridColumn>
         <FixedGridColumn fixed>
-          <Image source={yammerLogo} description="test" width={100} />
+          {image}
         </FixedGridColumn>
       </FixedGridRow>
     </div>
@@ -85,7 +87,7 @@ storiesOf('FixedGrid', module)
     <div>
       <FixedGridRow gutterSize={GutterSize.XXLARGE} bottomSpacing={GutterSize.XXLARGE}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: XXLARGE</strong> and <strong>bottomSpacing: XXLARGE</strong>.
@@ -94,7 +96,7 @@ storiesOf('FixedGrid', module)
 
       <FixedGridRow gutterSize={GutterSize.XLARGE} bottomSpacing={GutterSize.XLARGE}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: XLARGE</strong> and <strong>bottomSpacing: XLARGE</strong>.
@@ -103,7 +105,7 @@ storiesOf('FixedGrid', module)
 
       <FixedGridRow gutterSize={GutterSize.LARGE} bottomSpacing={GutterSize.LARGE}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: LARGE</strong> and <strong>bottomSpacing: LARGE</strong>.
@@ -112,7 +114,7 @@ storiesOf('FixedGrid', module)
 
       <FixedGridRow gutterSize={GutterSize.MEDIUM} bottomSpacing={GutterSize.MEDIUM}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: MEDIUM</strong> and <strong>bottomSpacing: MEDIUM</strong>.
@@ -121,7 +123,7 @@ storiesOf('FixedGrid', module)
 
       <FixedGridRow gutterSize={GutterSize.SMALL} bottomSpacing={GutterSize.SMALL}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: SMALL</strong> and <strong>bottomSpacing: SMALL</strong>.
@@ -130,7 +132,7 @@ storiesOf('FixedGrid', module)
 
       <FixedGridRow gutterSize={GutterSize.XSMALL} bottomSpacing={GutterSize.XSMALL}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: XSMALL</strong> and <strong>bottomSpacing: XSMALL</strong>.
@@ -139,7 +141,7 @@ storiesOf('FixedGrid', module)
 
       <FixedGridRow gutterSize={GutterSize.XSMALL}>
         <FixedGridColumn fixed width={100}>
-          <Image source={yammerLogo} description="test" fullWidth />
+          {image}
         </FixedGridColumn>
         <FixedGridColumn>
           This is an example with <strong>gutterSize: XSMALL</strong> and no bottomSpacing.

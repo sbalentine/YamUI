@@ -5,7 +5,6 @@ import classNames = require('classnames');
 import { Enum } from 'typescript-string-enums';
 import { NestableBaseComponentProps } from '../../util/BaseComponent/props';
 import { Key } from '../../util/enums/key';
-import { Callout as FabricCallout, DirectionalHint } from 'office-ui-fabric-react/lib/Callout';
 import ScreenreaderText from '../ScreenreaderText';
 import './callout.css';
 
@@ -33,12 +32,6 @@ export interface CalloutProps extends NestableBaseComponentProps {
    * A hidden title to be rendered in an h1 tag
    */
   screenreaderTitle?: string;
-
-  /**
-   * This side or corner to place the Callout in relationship to its visible trigger content.
-   * Note that this is a hint and the popup position will adjust to available screen real estate.
-   */
-  directionalHint?: DirectionalHint;
 
   /**
    * Whether or not the arrow/beak should be displayed. Defaults to true.
@@ -76,12 +69,10 @@ export interface CalloutProps extends NestableBaseComponentProps {
 export interface CalloutState {
   visible: boolean;
 }
-export { DirectionalHint };
 
 export class Callout extends React.Component<CalloutProps, CalloutState> {
   static defaultProps: Partial<CalloutProps> = {
     isBeakVisible: true,
-    directionalHint: DirectionalHint.bottomCenter,
     triggerType: TriggerType.HOVER,
     startVisible: false,
   };
@@ -115,19 +106,14 @@ export class Callout extends React.Component<CalloutProps, CalloutState> {
           {this.props.children}
         </span>
         {this.state.visible && (
-          <FabricCallout isBeakVisible={this.props.isBeakVisible}
-                         directionalHint={this.props.directionalHint}
-                         target={this.triggerElement}
-                         onDismiss={this.hide}
-                         preventDismissOnScroll={false}>
-            <div className="y-callout--modal-container" onMouseEnter={this.handleBodyHover}
-                 onMouseLeave={this.beginHide}>
+          <div className="y-callout--body" style={{'border': '1px solid red'}}>
+            <div className="y-callout--modal-container">
               {this.props.screenreaderTitle && (
                 <ScreenreaderText><h1>{this.props.screenreaderTitle}</h1></ScreenreaderText>
               )}
               {this.props.content}
             </div>
-          </FabricCallout>
+          </div>
         )}
       </span>
     );

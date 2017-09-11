@@ -2,7 +2,7 @@
 import '../../yamui';
 import * as React from 'react';
 import { Enum } from 'typescript-string-enums';
-import { Persona, PersonaSize } from 'office-ui-fabric-react/lib/Persona';
+import Persona, { PersonaSize } from '../Persona';
 import { BaseComponentProps } from '../../util/BaseComponent/props';
 import { AvatarSize } from '../../util/enums/avatar';
 import ScreenreaderText from '../ScreenreaderText';
@@ -16,11 +16,11 @@ export const BorderType = Enum({
 export type BorderType = Enum<typeof BorderType>;
 
 const SizeMap = {
-  [AvatarSize.XLARGE]: PersonaSize.large,
-  [AvatarSize.LARGE]: PersonaSize.regular,
-  [AvatarSize.MEDIUM]: PersonaSize.small,
-  [AvatarSize.SMALL]: PersonaSize.extraSmall,
-  [AvatarSize.XSMALL]: PersonaSize.extraExtraSmall,
+  [AvatarSize.XLARGE]: PersonaSize.LARGE,
+  [AvatarSize.LARGE]: PersonaSize.REGULAR,
+  [AvatarSize.MEDIUM]: PersonaSize.SMALL,
+  [AvatarSize.SMALL]: PersonaSize.XSMALL,
+  [AvatarSize.XSMALL]: PersonaSize.XXSMALL,
 };
 
 
@@ -81,11 +81,7 @@ export default class Avatar extends React.Component<AvatarProps, {}> {
 
     return (
       <div className={this.getClasses()}>
-        <Persona imageUrl={this.props.imageUrl}
-                 imageInitials={this.getInitials()}
-                 size={personaSize}
-                 hidePersonaDetails={true}
-                 primaryText={this.props.name} />
+        <Persona />
         {this.props.badgeContent && (
           <div className={`y-avatar--badge y-avatar__size-${this.props.size}--badge`}>{this.props.badgeContent}</div>
         )}
@@ -93,6 +89,12 @@ export default class Avatar extends React.Component<AvatarProps, {}> {
       </div>
     );
   }
+
+  // <Persona imageUrl={this.props.imageUrl}
+  // imageInitials={this.getInitials()}
+  // size={personaSize}
+  // hidePersonaDetails={true}
+  // primaryText={this.props.name} />
 
   private getInitials () {
     if (!this.props.initials) {

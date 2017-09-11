@@ -3,8 +3,8 @@ import * as React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import Button, { ButtonProps, ButtonColor, ButtonSize } from './index';
 import Icon, { IconSize } from '../Icon';
-import { BaseButton } from 'office-ui-fabric-react/lib/Button';
 
+const buttonSelecter = '.y-button';
 const sampleText = 'Click Me';
 const sampleAriaLabel = 'Aria description';
 
@@ -16,10 +16,6 @@ describe('<Button />', () => {
       component = shallow(
         <Button text={sampleText} />,
       );
-    });
-
-    it('renders a Fabric BaseButton', () => {
-      expect(component.find(BaseButton).length).toBe(1);
     });
 
     it('contains its base className', () => {
@@ -159,7 +155,7 @@ describe('<Button />', () => {
     });
 
     it('prop is set', () => {
-      expect(component.find(BaseButton).prop('disabled')).toEqual(true);
+      expect(component.find(buttonSelecter).prop('disabled')).toEqual(true);
     });
 
     it('matches its snapshot', () => {
@@ -175,7 +171,7 @@ describe('<Button />', () => {
     });
 
     it('prop is set', () => {
-      expect(component.find(BaseButton).prop('ariaLabel')).toEqual(sampleAriaLabel);
+      expect(component.find(buttonSelecter).prop('ariaLabel')).toEqual(sampleAriaLabel);
     });
 
     it('matches its snapshot', () => {

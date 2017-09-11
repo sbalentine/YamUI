@@ -3,7 +3,6 @@ import '../../yamui';
 import * as React from 'react';
 import { Enum } from 'typescript-string-enums';
 import { BaseComponentProps } from '../../util/BaseComponent/props';
-import { BaseButton } from 'office-ui-fabric-react/lib/components/Button/BaseButton';
 import Icon, { IconSize, IconProps, IconName } from '../Icon';
 import './button.css';
 
@@ -120,6 +119,7 @@ export default class Button extends React.Component<ButtonProps, {}> {
           Please use a Button for actions, NavigationLink (or Button with href) for navigation.`,
         );
       }
+
     },
   };
 
@@ -137,15 +137,13 @@ export default class Button extends React.Component<ButtonProps, {}> {
     const href = (props as LinkButtonProps).href;
 
     return (
-      <BaseButton className={this.getClasses()}
-                  onClick={onClick}
-                  onMouseEnter={onMouseEnter}
-                  onMouseLeave={onMouseLeave}
-                  onFocus={onFocus}
-                  onBlur={onBlur}
-                  disabled={disabled}
-                  ariaLabel={ariaLabel}
-                  href={href}>
+      <button className={this.getClasses()}
+              onClick={onClick}
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              disabled={disabled}>
         {icon && (iconPosition === IconPosition.LEFT) && (
           <span className="y-button--icon-wrapper-left">
             <Icon {...this.getIconProps()} />
@@ -157,9 +155,12 @@ export default class Button extends React.Component<ButtonProps, {}> {
             <Icon {...this.getIconProps()} />
           </span>
         )}
-      </BaseButton>
+      </button>
     );
   }
+
+  // ariaLabel={ariaLabel}
+  // href={href}>
 
   private getIconProps (): IconProps {
     return {

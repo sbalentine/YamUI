@@ -11,6 +11,6 @@
 }
 
 /* Fabric Callout box-shadow override */
-.ms-Callout {
+.ms-Callout, .y-callout {
   box-shadow: 0 0 15px -5px rgba(0, 0, 0, .4)  !important;
 }
